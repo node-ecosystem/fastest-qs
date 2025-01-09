@@ -1,6 +1,6 @@
 # fastest-qs
 
-This project is an object version is an exported `fast-querystring` used by [Elysia](https://github.com/elysiajs/elysia) ([source](https://github.com/elysiajs/elysia/blob/main/src/fast-querystring.ts)), which in turn is inspired by the original [fast-querystring](https://github.com/anonrig/fast-querystring).
+This project is an object version is an exported `fast-querystring` used by [Elysia](https://github.com/elysiajs/elysia) ([source](https://github.com/elysiajs/elysia/blob/main/src/fast-querystring.ts)), which in turn is inspired by the original [fast-querystring](https://github.com/anonrig/fast-querystring) and improved with [deuri](https://github.com/re-utils/deuri).
 
 ## Installation
 
