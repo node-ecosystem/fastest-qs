@@ -1,5 +1,6 @@
-// https://github.com/elysiajs/elysia/blob/main/src/fast-querystring.ts
-import fastDecode from 'fast-decode-uri-component'
+// @see https://github.com/elysiajs/elysia/blob/main/src/fast-querystring.ts
+
+import { decode as fastDecode } from './deuri'
 
 const plusRegex = /\+/g
 

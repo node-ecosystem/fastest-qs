@@ -22,4 +22,6 @@ SOFTWARE.
 
 end of terms and conditions
 
-The licenses of externally maintained libraries from which parts of the Software is derived are listed [here](https://github.com/node-ecosystem/fastest-qs/blob/main/THIRD-PARTY-LICENSE).
+The licenses of externally maintained libraries from which parts of the Software is derived are listed here:
+- [fastest-qs](https://github.com/node-ecosystem/fastest-qs/blob/main/THIRD-PARTY-LICENSE)
+- [deuri](https://github.com/re-utils/deuri)

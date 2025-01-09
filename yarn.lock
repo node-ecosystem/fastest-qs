@@ -666,13 +666,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/fast-decode-uri-component@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "@types/fast-decode-uri-component@npm:1.0.0"
-  checksum: 10c0/71de4771e158ee3fb747686593311e54a225099275828f058104cd09533b9bc8f8568d0d477b2b72b53f007ebadd6fc4a99cda6e517dbfd26823fd8965feea47
-  languageName: node
-  linkType: hard
-
 "@types/http-cache-semantics@npm:*":
   version: 4.0.4
   resolution: "@types/http-cache-semantics@npm:4.0.4"
@@ -1405,6 +1398,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"deuri@npm:^0.0.5":
+  version: 0.0.5
+  resolution: "deuri@npm:0.0.5"
+  checksum: 10c0/fda81714678f6844d9f6a55a0bb729e564fa14ba1f22f1adf3d086e986a70aa075e9a943cf050b2fed7534a20b354df23df5dba4643613aec7300dc7bb1e8f84
+  languageName: node
+  linkType: hard
+
 "diff@npm:^5.1.0":
   version: 5.2.0
   resolution: "diff@npm:5.2.0"
@@ -1758,13 +1758,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-decode-uri-component@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "fast-decode-uri-component@npm:1.0.1"
-  checksum: 10c0/039d50c2e99d64f999c3f2126c23fbf75a04a4117e218a149ca0b1d2aeb8c834b7b19d643b9d35d4eabce357189a6a94085f78cf48869e6e26cc59b036284bc3
-  languageName: node
-  linkType: hard
-
 "fast-deep-equal@npm:^3.1.1, fast-deep-equal@npm:^3.1.3":
   version: 3.1.3
   resolution: "fast-deep-equal@npm:3.1.3"
@@ -1803,12 +1796,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "fastest-qs@workspace:."
   dependencies:
-    "@types/fast-decode-uri-component": "npm:^1.0.0"
     "@types/node": "npm:^22.10.2"
     "@yarnpkg/sdks": "npm:^3.2.0"
+    deuri: "npm:^0.0.5"
     eslint: "npm:^9.17.0"
     eslint-plugin-unicorn: "npm:^56.0.1"
-    fast-decode-uri-component: "npm:^1.0.1"
     pkgroll: "npm:^2.5.1"
     typescript: "npm:5.7.2"
     typescript-eslint: "npm:^8.18.0"
