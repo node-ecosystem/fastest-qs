@@ -18,10 +18,10 @@ const calcHex = (a: number, b: number): number => {
 
 // Map bytes to character to a transition
 const type: number[] = [
-  ...Array.from<number>({ length: 128 }).fill(0),
-  ...Array.from<number>({ length: 16 }).fill(1),
-  ...Array.from<number>({ length: 16 }).fill(2),
-  ...Array.from<number>({ length: 32 }).fill(3),
+  ...new Array(128).fill(0),
+  ...new Array(16).fill(1),
+  ...new Array(16).fill(2),
+  ...new Array(32).fill(3),
   4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
   6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8, 7, 7, 10, 9, 9, 9, 11, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4
 ]
@@ -59,7 +59,7 @@ export const decode = (url: string): string | null => {
     byte: number
 
   for (; ;) {
-    byte = calcHex(url.codePointAt(percentPosition + 1)!, url.codePointAt(percentPosition + 2)!)
+    byte = calcHex(url.charCodeAt(percentPosition + 1), url.charCodeAt(percentPosition + 2))
     state = next[state + type[byte]]
     if (state === 0) return null
     if (state === 12) {
@@ -69,8 +69,8 @@ export const decode = (url: string): string | null => {
       codepoint = codepoint << 6 | byte & mask[byte]
 
       decoded += codepoint > 0xFFFF
-        ? String.fromCodePoint(0xD7C0 + (codepoint >> 10), 0xDC00 + (codepoint & 0x3FF))
-        : String.fromCodePoint(codepoint)
+        ? String.fromCharCode(0xD7C0 + (codepoint >> 10), 0xDC00 + (codepoint & 0x3FF))
+        : String.fromCharCode(codepoint)
 
       // Search next encoded component
       start = percentPosition + 3
@@ -86,7 +86,7 @@ export const decode = (url: string): string | null => {
     } else {
       // Check next %
       percentPosition += 3
-      if (percentPosition > end || url.codePointAt(percentPosition) !== 37)
+      if (percentPosition > end || url.charCodeAt(percentPosition) !== 37)
         return null
 
       // Calculate current codepoint
@@ -124,7 +124,7 @@ export const decode = (url: string): string | null => {
 //     byte: number
 
 //   for (; ;) {
-//     byte = calcHex(url.codePointAt(percentPosition + 1)!, url.codePointAt(percentPosition + 2)!)
+//     byte = calcHex(url.charCodeAt(percentPosition + 1)!, url.charCodeAt(percentPosition + 2)!)
 //     state = next[state + type[byte]]
 //     if (state === 0) return null
 //     if (state === 12) {
@@ -134,8 +134,8 @@ export const decode = (url: string): string | null => {
 //       codepoint = codepoint << 6 | byte & mask[byte]
 
 //       decoded += codepoint > 0xFFFF
-//         ? String.fromCodePoint(0xD7C0 + (codepoint >> 10), 0xDC00 + (codepoint & 0x3FF))
-//         : String.fromCodePoint(codepoint)
+//         ? String.fromCharCode(0xD7C0 + (codepoint >> 10), 0xDC00 + (codepoint & 0x3FF))
+//         : String.fromCharCode(codepoint)
 
 //       // Search next encoded component
 //       start = percentPosition + 3
@@ -151,7 +151,7 @@ export const decode = (url: string): string | null => {
 //     } else {
 //       // Check next %
 //       percentPosition += 3
-//       if (percentPosition > end || url.codePointAt(percentPosition) !== 37)
+//       if (percentPosition > end || url.charCodeAt(percentPosition) !== 37)
 //         return null
 
 //       // Calculate current codepoint
